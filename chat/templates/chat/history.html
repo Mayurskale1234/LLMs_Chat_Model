@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .chat-entry {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .chat-entry:last-child {
+            border-bottom: none;
+        }
+        .chat-entry p {
+            margin: 5px 0;
+        }
+        .chat-entry .model-name {
+            font-weight: bold;
+        }
+        .chat-entry .user-input {
+            color: #555;
+        }
+        .chat-entry .response {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat History</h1>
+        {% for entry in chat_history %}
+        <div class="chat-entry">
+            <p class="model-name">Model: {{ entry.model }}</p>
+            <p class="user-input">Input: {{ entry.input }}</p>
+            <p class="response">Response: {{ entry.response }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
